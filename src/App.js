@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+
 import './App.css';
+import useArr  from './hooks/useArr';
 
 function App() {
+
+  const studentArr = ['Huyen', 'Hoa', 'Hung', 'Long']
+  const  [selectedItem, selectedIndex, handleChange, findSelectedIndex, printArr] = useArr(studentArr)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <div>学生一覧：{printArr()}</div>
+        <div>探索名前：<input type="text" onChange={handleChange}></input></div>
+        <button onClick={findSelectedIndex}>確定</button>
+        <div>探索名前：{selectedItem}</div>
+        <div>位置: {selectedIndex}</div>
+      </div>
   );
 }
 
