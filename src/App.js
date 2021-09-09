@@ -11,7 +11,7 @@ function App() {
       <div className="App">
         <div>学生一覧：{printArr()}</div>
         <div>探索名前：<input type="text" onChange={handleChange}></input></div>
-        <button onClick={findSelectedIndex}>確定</button>
+        <button onClick={findSelectedIndex} className= "btn">確定</button>
         <div>探索名前：{selectedItem}</div>
         <div>位置: {selectedIndex}</div>
       </div>
